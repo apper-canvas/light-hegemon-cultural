@@ -29,19 +29,14 @@ const MainMenu = () => {
       label: 'How to Play',
       description: 'Learn the art of cultural dominance',
       icon: 'BookOpen',
-      action: () => {
-        // Tutorial would be implemented here
-        console.log('Tutorial clicked');
-      }
+action: () => navigate('/tutorial')
     },
     {
       id: 'settings',
       label: 'Settings',
       description: 'Configure your experience',
       icon: 'Settings',
-      action: () => {
-        console.log('Settings clicked');
-      }
+action: () => navigate('/settings')
     }
   ];
 
