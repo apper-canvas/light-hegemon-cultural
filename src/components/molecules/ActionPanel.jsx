@@ -65,18 +65,18 @@ const ActionPanel = ({
     );
   }
 
-  const isPlayerTerritory = selectedTerritory.controllingEmpire === 'player';
+const isPlayerTerritory = selectedTerritory.controlling_empire === 'player';
 
   return (
     <div className="parchment-bg rounded-lg p-6 border-2 border-accent/30 shadow-parchment">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-display text-lg font-semibold text-primary">
-          {selectedTerritory.name}
+<h3 className="font-display text-lg font-semibold text-primary">
+          {selectedTerritory.Name}
         </h3>
         <div className="flex items-center gap-2">
           <ApperIcon name="Coins" size={16} className="text-accent" />
-          <span className="font-semibold text-primary">
-            {playerEmpire?.culturePoints || 0}
+<span className="font-semibold text-primary">
+            {playerEmpire?.culture_points || 0}
           </span>
         </div>
       </div>

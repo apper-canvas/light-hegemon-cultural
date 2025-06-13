@@ -59,8 +59,8 @@ const GameMap = ({
     }
   }, [isDragging, dragStart]);
 
-  const getEmpireById = (empireId) => {
-    return empires.find(e => e.id === empireId);
+const getEmpireById = (empireId) => {
+    return empires.find(e => e.Id === empireId);
   };
 
   return (
@@ -106,9 +106,9 @@ const GameMap = ({
         >
           {/* Territory Grid */}
           <div className="grid grid-cols-3 gap-4 p-8 min-w-[800px] min-h-[600px]">
-            {territories.map((territory, index) => (
+{territories.map((territory, index) => (
               <motion.div
-                key={territory.id}
+                key={territory.Id}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
@@ -117,8 +117,8 @@ const GameMap = ({
                 <TerritoryCard
                   territory={territory}
                   cultures={cultures}
-                  empire={getEmpireById(territory.controllingEmpire)}
-                  isSelected={selectedTerritory?.id === territory.id}
+empire={getEmpireById(territory.controlling_empire)}
+                  isSelected={selectedTerritory?.Id === territory.Id}
                   onClick={onTerritorySelect}
                 />
               </motion.div>
@@ -172,13 +172,13 @@ const GameMap = ({
       <div className="absolute bottom-4 left-4 z-10 parchment-bg p-3 rounded-lg border border-accent/30 shadow-parchment">
         <h4 className="font-medium text-primary mb-2 text-sm">Empire Legend</h4>
         <div className="space-y-1">
-          {empires.slice(0, 4).map(empire => (
-            <div key={empire.id} className="flex items-center gap-2 text-xs">
+{empires.slice(0, 4).map(empire => (
+            <div key={empire.Id} className="flex items-center gap-2 text-xs">
               <div 
                 className="w-3 h-3 rounded-full border border-white"
-                style={{ backgroundColor: empire.color }}
+style={{ backgroundColor: empire.color }}
               />
-              <span className="text-primary/80">{empire.name}</span>
+              <span className="text-primary/80">{empire.Name}</span>
             </div>
           ))}
         </div>

@@ -12,10 +12,10 @@ const TerritoryCard = ({
 }) => {
   const getDominantCulture = () => {
     if (!territory.cultures?.length) return null;
-    const dominant = territory.cultures.reduce((prev, current) => 
+const dominant = territory.cultures.reduce((prev, current) => 
       (prev.influence > current.influence) ? prev : current
     );
-    return cultures.find(c => c.id === dominant.cultureId);
+    return cultures.find(c => c.Id === dominant.cultureId);
   };
 
   const dominantCulture = getDominantCulture();
@@ -42,7 +42,7 @@ const TerritoryCard = ({
             style={{ backgroundColor: empireColor }}
             title={`Controlled by ${empire?.name || 'Unknown'}`}
           />
-          <h4 className="font-display font-semibold text-primary">{territory.name}</h4>
+<h4 className="font-display font-semibold text-primary">{territory.Name}</h4>
         </div>
         <ApperIcon 
           name={isSelected ? "MapPin" : "Map"} 
@@ -81,12 +81,12 @@ const TerritoryCard = ({
             {territory.cultures
               .sort((a, b) => b.influence - a.influence)
               .slice(0, 3)
+.slice(0, 3)
               .map((cultureInfluence, index) => {
-                const culture = cultures.find(c => c.id === cultureInfluence.cultureId);
-                if (!culture) return null;
+                const culture = cultures.find(c => c.Id === cultureInfluence.cultureId);
                 
-                return (
-                  <div key={culture.id} className="flex items-center justify-between">
+return (
+                  <div key={culture.Id} className="flex items-center justify-between">
                     <CultureBadge culture={culture} size="small" showName={false} />
                     <div className="flex-1 mx-2">
                       <ProgressBar 

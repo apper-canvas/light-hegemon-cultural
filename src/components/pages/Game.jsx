@@ -44,7 +44,7 @@ const Game = () => {
     setError(null);
     
     try {
-      const [territoriesData, culturesData, empiresData, gameStateData] = await Promise.all([
+const [territoriesData, culturesData, empiresData, gameStateData] = await Promise.all([
         territoryService.getAll(),
         cultureService.getAll(),
         empireService.getAll(),
@@ -55,8 +55,7 @@ const Game = () => {
       setCultures(culturesData);
       setEmpires(empiresData);
       setGameState(gameStateData);
-      
-      const player = empiresData.find(e => e.isPlayer);
+const player = empiresData.find(e => e.is_player);
       setPlayerEmpire(player);
       
       toast.success('Game loaded successfully');
@@ -114,58 +113,56 @@ const Game = () => {
   };
 
   const handleInfluenceAction = async (territory) => {
-    const cost = 30;
-    if (playerEmpire.culturePoints < cost) {
+const cost = 30;
+    if (playerEmpire.culture_points < cost) {
       throw new Error('Insufficient culture points');
     }
 
     // Spend culture points
-    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.id, cost);
+    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.Id, cost);
     setPlayerEmpire(updatedEmpire);
 
-    // Increase cultural influence
+// Increase cultural influence
     const updatedTerritory = await territoryService.influenceTerritory(
-      territory.id, 
+      territory.Id, 
       'romano', // Assuming player uses Romano culture
       15
     );
     
-    // Update territories state
+// Update territories state
     setTerritories(prev => prev.map(t => 
-      t.id === territory.id ? updatedTerritory : t
+      t.Id === territory.Id ? updatedTerritory : t
     ));
 
-    toast.success(`Cultural influence increased in ${territory.name}`);
-  };
+toast.success(`Cultural influence increased in ${territory.Name}`);
 
   const handleDevelopAction = async (territory) => {
-    const cost = 50;
-    if (playerEmpire.culturePoints < cost) {
+const cost = 50;
+    if (playerEmpire.culture_points < cost) {
       throw new Error('Insufficient culture points');
     }
 
-    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.id, cost);
+    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.Id, cost);
     setPlayerEmpire(updatedEmpire);
 
-    const updatedTerritory = await territoryService.update(territory.id, {
+const updatedTerritory = await territoryService.update(territory.Id, {
       development: Math.min(100, territory.development + 10),
       happiness: Math.min(100, territory.happiness + 5)
     });
 
-    setTerritories(prev => prev.map(t => 
-      t.id === territory.id ? updatedTerritory : t
+setTerritories(prev => prev.map(t => 
+      t.Id === territory.Id ? updatedTerritory : t
     ));
 
-    toast.success(`Development improved in ${territory.name}`);
-  };
+toast.success(`Development improved in ${territory.Name}`);
 
   const handleAssimilateAction = async (territory) => {
-    const cost = 80;
-    if (playerEmpire.culturePoints < cost) {
+const cost = 80;
+    if (playerEmpire.culture_points < cost) {
       throw new Error('Insufficient culture points');
     }
 
-    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.id, cost);
+    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.Id, cost);
     setPlayerEmpire(updatedEmpire);
 
     // Simulate cultural assimilation - reduce minority culture influence
@@ -176,25 +173,24 @@ const Game = () => {
       return { ...c, influence: Math.min(100, c.influence + 5) };
     });
 
-    const updatedTerritory = await territoryService.update(territory.id, {
+const updatedTerritory = await territoryService.update(territory.Id, {
       cultures: updatedCultures,
       happiness: Math.max(0, territory.happiness - 10) // Assimilation reduces happiness
     });
 
-    setTerritories(prev => prev.map(t => 
-      t.id === territory.id ? updatedTerritory : t
+setTerritories(prev => prev.map(t => 
+      t.Id === territory.Id ? updatedTerritory : t
     ));
 
-    toast.success(`Cultural assimilation attempted in ${territory.name}`);
-  };
+toast.success(`Cultural assimilation attempted in ${territory.Name}`);
 
   const handleInnovateAction = async (territory) => {
-    const cost = 40;
-    if (playerEmpire.culturePoints < cost) {
+const cost = 40;
+    if (playerEmpire.culture_points < cost) {
       throw new Error('Insufficient culture points');
     }
 
-    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.id, cost);
+    const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.Id, cost);
     setPlayerEmpire(updatedEmpire);
 
     // Boost innovation in dominant culture
@@ -207,18 +203,18 @@ const Game = () => {
     const updatedCultures = await cultureService.getAll();
     setCultures(updatedCultures);
 
-    toast.success(`Innovation fostered in ${territory.name}`);
-  };
+toast.success(`Innovation fostered in ${territory.Name}`);
 
   const handleEndTurn = async () => {
     const newGameState = await gameService.nextTurn();
     setGameState(newGameState);
 
-    // Add culture points for new turn
+// Add culture points for new turn
     const updatedEmpire = await empireService.addCulturePoints(
-      playerEmpire.id, 
+      playerEmpire.Id, 
       20 + (playerEmpire.territories?.length * 5) || 25
     );
+    setPlayerEmpire(updatedEmpire);
     setPlayerEmpire(updatedEmpire);
 
     // Check victory conditions
@@ -335,8 +331,8 @@ const Game = () => {
       <div className="flex-1 flex overflow-hidden">
         {/* Left Sidebar - Culture Panel */}
         <aside className="w-80 bg-surface-50 border-r-2 border-accent/30 overflow-y-auto p-4">
-          <CulturePanel
-            cultures={cultures.filter(c => c.empireId === 'player')}
+<CulturePanel
+            cultures={cultures.filter(c => c.empire_id === 'player')}
             selectedCulture={selectedCulture}
             onCultureSelect={handleCultureSelect}
           />

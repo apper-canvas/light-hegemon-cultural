@@ -26,16 +26,16 @@ const CulturePanel = ({ cultures, onCultureSelect, selectedCulture }) => {
       </h3>
       
       <div className="space-y-4">
-        {cultures.map((culture, index) => (
+{cultures.map((culture, index) => (
           <motion.div
-            key={culture.id}
+            key={culture.Id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             className={`
-              p-4 rounded-lg border-2 cursor-pointer transition-all duration-200
-              ${selectedCulture?.id === culture.id 
-                ? 'border-accent bg-accent/10' 
+p-4 rounded-lg border-2 cursor-pointer transition-all duration-200
+              ${selectedCulture?.Id === culture.Id 
+                ? 'border-accent bg-accent/10'
                 : 'border-surface-300 hover:border-accent/50 bg-surface-50'
               }
             `}
@@ -45,7 +45,7 @@ const CulturePanel = ({ cultures, onCultureSelect, selectedCulture }) => {
             <div className="flex items-center justify-between mb-3">
               <CultureBadge culture={culture} size="medium" />
               <div className="flex items-center gap-3">
-                <div className="text-right">
+<div className="text-right">
                   <div className="text-xs text-primary/60">Innovation</div>
                   <div className="font-semibold text-primary">{culture.innovation}</div>
                 </div>
