@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "name": "Codex Aurelius",
+    "culture": "romano",
+    "empire": "player",
+    "type": "Legal",
+    "progress": 65,
+    "effect": {
+      "type": "happiness",
+      "value": 15,
+      "description": "Increases happiness in all Romano-Italic territories"
+    },
+    "cost": 200,
+    "description": "A comprehensive legal code that brings order and justice"
+  },
+  {
+    "id": "2",
+    "name": "Sacred Grove Network",
+    "culture": "celtic",
+    "empire": "ai1",
+    "type": "Religious",
+    "progress": 100,
+    "effect": {
+      "type": "innovation",
+      "value": 10,
+      "description": "Boosts innovation through druidic wisdom sharing"
+    },
+    "cost": 180,
+    "description": "A network of sacred groves connecting Celtic wisdom"
+  },
+  {
+    "id": "3",
+    "name": "Runic Chronicle",
+    "culture": "nordic",
+    "empire": "ai2", 
+    "type": "Cultural",
+    "progress": 100,
+    "effect": {
+      "type": "influence",
+      "value": 20,
+      "description": "Increases cultural influence spread rate"
+    },
+    "cost": 220,
+    "description": "Epic sagas that inspire and unite the Nordic peoples"
+  },
+  {
+    "id": "4",
+    "name": "Trade Consortium",
+    "culture": "phoenician",
+    "empire": "ai1",
+    "type": "Economic",
+    "progress": 40,
+    "effect": {
+      "type": "culturePoints",
+      "value": 25,
+      "description": "Generates additional culture points per turn"
+    },
+    "cost": 250,
+    "description": "A vast trading network spanning the known world"
+  },
+  {
+    "id": "5",
+    "name": "Great Assembly Hall",
+    "culture": "germanic",
+    "empire": "ai2",
+    "type": "Political",
+    "progress": 80,
+    "effect": {
+      "type": "diplomacy",
+      "value": 1,
+      "description": "Improves diplomatic relations with all empires"
+    },
+    "cost": 190,
+    "description": "A magnificent hall for democratic assemblies and debate"
+  }
+]

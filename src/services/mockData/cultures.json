@@ -1,0 +1,107 @@
+[
+  {
+    "id": "romano",
+    "name": "Romano-Italic",
+    "empireId": "player",
+    "traditions": ["Legal Codex", "Urban Planning", "Military Discipline"],
+    "innovation": 75,
+    "happiness": 70,
+    "color": "#8B0000",
+    "traits": {
+      "lawAndOrder": 85,
+      "architecture": 90,
+      "militaryTactics": 80
+    },
+    "description": "Masters of law, engineering, and organized warfare"
+  },
+  {
+    "id": "celtic",
+    "name": "Celtic Tribes",
+    "empireId": "ai1", 
+    "traditions": ["Oral Storytelling", "Druidic Wisdom", "Clan Warfare"],
+    "innovation": 60,
+    "happiness": 85,
+    "color": "#228B22",
+    "traits": {
+      "naturalWisdom": 90,
+      "storytelling": 95,
+      "guerrillaTactics": 75
+    },
+    "description": "Keepers of ancient wisdom and fierce independence"
+  },
+  {
+    "id": "germanic",
+    "name": "Germanic Peoples",
+    "empireId": "ai2",
+    "traditions": ["Warrior Code", "Craftsmanship", "Thing Assemblies"],
+    "innovation": 70,
+    "happiness": 80,
+    "color": "#4169E1",
+    "traits": {
+      "craftsmanship": 85,
+      "democracy": 70,
+      "warfare": 90
+    },
+    "description": "Skilled craftsmen and democratic warriors"
+  },
+  {
+    "id": "nordic",
+    "name": "Nordic Seafarers",
+    "empireId": "ai2",
+    "traditions": ["Seafaring", "Runecraft", "Saga Tradition"],
+    "innovation": 80,
+    "happiness": 90,
+    "color": "#1E90FF",
+    "traits": {
+      "navigation": 95,
+      "exploration": 90,
+      "mythology": 85
+    },
+    "description": "Master navigators and explorers of new lands"
+  },
+  {
+    "id": "slavic",
+    "name": "Slavic Communities",
+    "empireId": "neutral",
+    "traditions": ["Collective Farming", "Folk Music", "Forest Lore"],
+    "innovation": 55,
+    "happiness": 75,
+    "color": "#8B4513",
+    "traits": {
+      "agriculture": 80,
+      "community": 90,
+      "forestry": 85
+    },
+    "description": "Agricultural communities with strong collective bonds"
+  },
+  {
+    "id": "phoenician",
+    "name": "Phoenician Traders",
+    "empireId": "ai1",
+    "traditions": ["Maritime Trade", "Alphabet Script", "Purple Dye"],
+    "innovation": 85,
+    "happiness": 70,
+    "color": "#800080",
+    "traits": {
+      "trade": 95,
+      "writing": 90,
+      "seamanship": 85
+    },
+    "description": "Master traders and inventors of the alphabet"
+  },
+  {
+    "id": "nomadic",
+    "name": "Steppe Nomads",
+    "empireId": "neutral",
+    "traditions": ["Horse Mastery", "Oral History", "Mobility"],
+    "innovation": 50,
+    "happiness": 80,
+    "color": "#CD853F",
+    "traits": {
+      "horsemanship": 95,
+      "mobility": 90,
+      "adaptation": 80
+    },
+    "description": "Mobile horse masters of the endless steppes"
+  }
+]

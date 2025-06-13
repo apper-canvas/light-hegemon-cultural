@@ -1,0 +1,108 @@
+[
+  {
+    "id": "1",
+    "name": "Aurelia",
+    "controllingEmpire": "player",
+    "cultures": [
+      {"cultureId": "romano", "influence": 85},
+      {"cultureId": "celtic", "influence": 15}
+    ],
+    "happiness": 78,
+    "development": 65,
+    "position": {"x": 150, "y": 200},
+    "neighbors": ["2", "3"]
+  },
+  {
+    "id": "2", 
+    "name": "Silvana",
+    "controllingEmpire": "player",
+    "cultures": [
+      {"cultureId": "romano", "influence": 60},
+      {"cultureId": "germanic", "influence": 40}
+    ],
+    "happiness": 65,
+    "development": 45,
+    "position": {"x": 250, "y": 150},
+    "neighbors": ["1", "4", "5"]
+  },
+  {
+    "id": "3",
+    "name": "Maritima",
+    "controllingEmpire": "ai1",
+    "cultures": [
+      {"cultureId": "celtic", "influence": 70},
+      {"cultureId": "romano", "influence": 30}
+    ],
+    "happiness": 82,
+    "development": 55,
+    "position": {"x": 100, "y": 300},
+    "neighbors": ["1", "6"]
+  },
+  {
+    "id": "4",
+    "name": "Nordmark",
+    "controllingEmpire": "ai2",
+    "cultures": [
+      {"cultureId": "germanic", "influence": 90},
+      {"cultureId": "nordic", "influence": 10}
+    ],
+    "happiness": 88,
+    "development": 70,
+    "position": {"x": 350, "y": 100},
+    "neighbors": ["2", "7"]
+  },
+  {
+    "id": "5",
+    "name": "Centralis",
+    "controllingEmpire": "neutral",
+    "cultures": [
+      {"cultureId": "slavic", "influence": 60},
+      {"cultureId": "germanic", "influence": 25},
+      {"cultureId": "romano", "influence": 15}
+    ],
+    "happiness": 55,
+    "development": 40,
+    "position": {"x": 300, "y": 250},
+    "neighbors": ["2", "6", "8"]
+  },
+  {
+    "id": "6",
+    "name": "Portus",
+    "controllingEmpire": "ai1",
+    "cultures": [
+      {"cultureId": "celtic", "influence": 50},
+      {"cultureId": "phoenician", "influence": 35},
+      {"cultureId": "romano", "influence": 15}
+    ],
+    "happiness": 70,
+    "development": 80,
+    "position": {"x": 200, "y": 350},
+    "neighbors": ["3", "5"]
+  },
+  {
+    "id": "7",
+    "name": "Fjordlands",
+    "controllingEmpire": "ai2",
+    "cultures": [
+      {"cultureId": "nordic", "influence": 85},
+      {"cultureId": "germanic", "influence": 15}
+    ],
+    "happiness": 92,
+    "development": 60,
+    "position": {"x": 400, "y": 50},
+    "neighbors": ["4"]
+  },
+  {
+    "id": "8",
+    "name": "Steppeland",
+    "controllingEmpire": "neutral",
+    "cultures": [
+      {"cultureId": "slavic", "influence": 75},
+      {"cultureId": "nomadic", "influence": 25}
+    ],
+    "happiness": 60,
+    "development": 35,
+    "position": {"x": 450, "y": 300},
+    "neighbors": ["5"]
+  }
+]

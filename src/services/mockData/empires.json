@@ -1,0 +1,58 @@
+[
+  {
+    "id": "player",
+    "name": "Imperium Aurelia",
+    "isPlayer": true,
+    "culturePoints": 150,
+    "territories": ["1", "2"],
+    "diplomacy": {
+      "ai1": "neutral",
+      "ai2": "tense",
+      "neutral": "friendly"
+    },
+    "completedGreatWorks": 0,
+    "color": "#8B0000"
+  },
+  {
+    "id": "ai1",
+    "name": "Celtic Confederation",
+    "isPlayer": false,
+    "culturePoints": 120,
+    "territories": ["3", "6"],
+    "diplomacy": {
+      "player": "neutral",
+      "ai2": "hostile",
+      "neutral": "allied"
+    },
+    "completedGreatWorks": 1,
+    "color": "#228B22"
+  },
+  {
+    "id": "ai2", 
+    "name": "Germanic Alliance",
+    "isPlayer": false,
+    "culturePoints": 180,
+    "territories": ["4", "7"],
+    "diplomacy": {
+      "player": "tense",
+      "ai1": "hostile",
+      "neutral": "neutral"
+    },
+    "completedGreatWorks": 1,
+    "color": "#4169E1"
+  },
+  {
+    "id": "neutral",
+    "name": "Free Territories",
+    "isPlayer": false,
+    "culturePoints": 80,
+    "territories": ["5", "8"],
+    "diplomacy": {
+      "player": "friendly",
+      "ai1": "allied",
+      "ai2": "neutral"
+    },
+    "completedGreatWorks": 0,
+    "color": "#696969"
+  }
+]
