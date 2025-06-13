@@ -58,9 +58,9 @@ const HowToPlay = () => {
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-surface-100 bg-parchment p-6">
-      <div className="max-w-4xl mx-auto">
+return (
+    <div className="bg-surface-100 bg-parchment py-6 px-4 md:p-6">
+      <div className="max-w-4xl mx-auto pb-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
