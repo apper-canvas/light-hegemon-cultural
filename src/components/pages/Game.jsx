@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-import GameHeader from '@/components/organisms/GameHeader';
-import GameMap from '@/components/organisms/GameMap';
-import CulturePanel from '@/components/molecules/CulturePanel';
-import ActionPanel from '@/components/molecules/ActionPanel';
-import VictoryModal from '@/components/organisms/VictoryModal';
+import GameHeader from '../organisms/GameHeader';
+import GameMap from '../organisms/GameMap';
+import CulturePanel from '../molecules/CulturePanel';
+import ActionPanel from '../molecules/ActionPanel';
+import VictoryModal from '../organisms/VictoryModal';
 
 import { 
   territoryService, 
   cultureService, 
   empireService, 
   gameService 
-} from '@/services';
+} from '../../services';
 
 const Game = () => {
   const navigate = useNavigate();
@@ -216,7 +216,6 @@ toast.success(`Cultural influence increased in ${territory.Name}`);
     const updatedEmpire = await empireService.addCulturePoints(
       playerEmpire.Id, 
       20 + (playerEmpire.territories?.length * 5) || 25
-20 + (playerEmpire.territories?.length * 5) || 25
     );
     setPlayerEmpire(updatedEmpire);
 
