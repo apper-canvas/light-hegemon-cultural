@@ -125,10 +125,9 @@ const cost = 30;
 // Increase cultural influence
     const updatedTerritory = await territoryService.influenceTerritory(
       territory.Id, 
-      'romano', // Assuming player uses Romano culture
+      'vedic', // Player now uses Vedic culture
       15
     );
-    
 // Update territories state
     setTerritories(prev => prev.map(t => 
       t.Id === territory.Id ? updatedTerritory : t
@@ -167,9 +166,9 @@ toast.success(`Cultural influence increased in ${territory.Name}`);
     const updatedEmpire = await empireService.spendCulturePoints(playerEmpire.Id, cost);
     setPlayerEmpire(updatedEmpire);
 
-    // Simulate cultural assimilation - reduce minority culture influence
+// Simulate cultural assimilation - reduce minority culture influence
     const updatedCultures = territory.cultures.map(c => {
-      if (c.cultureId !== 'romano') {
+      if (c.cultureId !== 'vedic') {
         return { ...c, influence: Math.max(0, c.influence - 10) };
       }
       return { ...c, influence: Math.min(100, c.influence + 5) };
